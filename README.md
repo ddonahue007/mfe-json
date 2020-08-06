@@ -16,8 +16,8 @@ Manual push from local repository
 Note: after you validate the changes have been pushed up to open shift make sire to push the changes to github
 
 # you can confirm the file was uploaded by doing either step.
-  1. open in browser: http://nginx-<namespace>.apps.ocp4.patternfly.org/importmap.json
+  1. open in browser: http://nginx-ddonahue.apps.ocp4.patternfly.org/importmap.json
   2. use curl:
   ```
-  > curl -o /tmp/importmap.json http://nginx-<namespace>.apps.ocp4.patternfly.org/importmap.json
+  > curl -o /tmp/importmap.json http://nginx-ddonahue.apps.ocp4.patternfly.org/importmap.json
   ```
