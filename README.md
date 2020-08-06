@@ -11,7 +11,7 @@ Clone this repository
 Manual push from local repository
 ```
 Get the nginx pod name (pod name is the first column of the command output)
-> my-oc get pods |grep nginx
+> oc --namespace <namespace> get pods |grep nginx
 nginx-2-x5kw5                      1/1       Running   0          120m
 
 > tar cvf - importmap.json | oc --namespace <namespace> rsh <POD_NAME> tar xofC - /usr/share/nginx/html
