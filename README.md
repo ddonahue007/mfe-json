@@ -15,9 +15,11 @@ Manual push from local repository
 
 2. push the file
     ```
-    ./scripts/deploy.sh 
-     2020-08-06 17:03:46 [INFO]  uploading file: importmap.json
-     a importmap.json
+    > ./scripts/build.sh deploy
+    2020-08-07 13:40:11 [INFO]  uploading file: cfd8209/importmap.json
+    a cfd8209
+    a cfd8209/importmap.json
+    2020-08-07 13:40:11 [INFO]  NEW RESOURCE CRETATED: http://nginx-ddonahue.apps.ocp4.patternfly.org/cfd8209/importmap.json
     ```
    
 confirm the file using one of the below
@@ -27,6 +29,6 @@ confirm the file using one of the below
     http://nginx-<namespace>.apps.ocp4.patternfly.org/importmap.json
     ```
 2. use curl:
-      ```
-      curl -o /tmp/importmap.json http://nginx-<namespace>.apps.ocp4.patternfly.org/importmap.json
-      ```
+    ```
+    curl -o /tmp/importmap.json http://nginx-<namespace>.apps.ocp4.patternfly.org/importmap.json
+    ```
