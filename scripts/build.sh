@@ -4,7 +4,7 @@ DIR=$(dirname "$0")
 source ${DIR}/common/logger.sh
 
 IMPORT_FILENAME=importmap.json
-VERSION=$(git rev-parse --short HEAD)
+VERSION=$(git rev-parse HEAD)
 DIST_DIR=dist
 
 USAGE="Usage: "`basename $0`" [clean|dist|deploy]"
@@ -23,8 +23,8 @@ deploy() {
   local _pod_name=$(oc --namespace ${NAMESPACE} get pods --selector=app=nginx --field-selector=status.phase=Running -o=jsonpath={.items..metadata.name})
   log-debug "POD NAME: ${_pod_name}"
 
-  log-info "uploading file: ${VERSION}/${IMPORT_FILENAME}"
-  log-debug "tar cvf - ${VERSION}/${IMPORT_FILENAME} | oc --namespace ${NAMESPACE} rsh ${_pod_name} tar xofC - /usr/share/nginx/html"
+  log-info "uploading version: ${VERSION}"
+  log-debug "tar cvf - ${VERSION} | oc --namespace ${NAMESPACE} rsh ${_pod_name} tar xofC - /usr/share/nginx/html"
   cd ${DIST_DIR}
   tar cvf - ${VERSION} | oc --namespace ${NAMESPACE} rsh ${_pod_name} tar xofC - /usr/share/nginx/html
   log-info "NEW RESOURCE CRETATED: http://${_resource_host}/${VERSION}/${IMPORT_FILENAME}"
