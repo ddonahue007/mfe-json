@@ -3,7 +3,7 @@
 DIR=$(dirname "$0")
 source ${DIR}/common/logger.sh
 
-IMPORT_FILENAME=importmap.json
+FILENAME=importmap.json
 VERSION=$(git rev-parse HEAD)
 DIST_DIR=dist
 
@@ -27,16 +27,20 @@ deploy() {
   log-debug "tar cvf - ${VERSION} | oc --namespace ${NAMESPACE} rsh ${_pod_name} tar xofC - /usr/share/nginx/html"
   cd ${DIST_DIR}
   tar cvf - ${VERSION} | oc --namespace ${NAMESPACE} rsh ${_pod_name} tar xofC - /usr/share/nginx/html
-  log-info "NEW RESOURCE CRETATED: http://${_resource_host}/${VERSION}/${IMPORT_FILENAME}"
+  log-info "NEW RESOURCE CRETATED: http://${_resource_host}/${VERSION}/${FILENAME}"
   cd ..
 }
 
 dist() {
-  log-debug "mkdir -p ${DIST_DIR}/${VERSION}/"
-  mkdir -p ${DIST_DIR}/${VERSION}/
+  if [ ! -d ${DIST_DIR} ]; then
+    mkdir -p ${DIST_DIR}/${VERSION}/
+    log-debug "mkdir -p ${DIST_DIR}/${VERSION}/"
+  else
+    log-debug "${DIST_DIR} already exists"
+  fi
 
-  log-debug "cp ${IMPORT_FILENAME} ${DIST_DIR}/${VERSION}/"
-  cp ${IMPORT_FILENAME} ${DIST_DIR}/${VERSION}
+  log-debug "cp ${FILENAME} ${DIST_DIR}/${VERSION}/"
+  cp ${FILENAME} ${DIST_DIR}/${VERSION}
 }
 
 clean() {
