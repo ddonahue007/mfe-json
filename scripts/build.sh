@@ -18,7 +18,6 @@ fi
 
 # push the `importmap.json file up to given location
 deploy() {
-  sleep 60
   local _resource_host=$(oc --namespace ${NAMESPACE} get route --selector=app=nginx -o=jsonpath={.items..status.ingress..host})
   local _pod_name=$(oc --namespace ${NAMESPACE} get pods --selector=app=nginx --field-selector=status.phase=Running -o=jsonpath={.items..metadata.name})
   log-debug "POD NAME: ${_pod_name}"
@@ -26,7 +25,7 @@ deploy() {
   log-info "uploading version: ${VERSION}"
   log-debug "tar cvf - ${VERSION} | oc --namespace ${NAMESPACE} rsh ${_pod_name} tar xofC - /usr/share/nginx/html"
   cd ${DIST_DIR}
-  tar cvf - ${VERSION} | oc --namespace ${NAMESPACE} rsh ${_pod_name} tar xofC - /usr/share/nginx/html
+  tar cvf - ${VERSION} | oc --namespace ${NAMESPACE} rsh ${_pod_name} tar xofC - /usr/share/nginx/html --warning=no-timestamp
   log-info "NEW RESOURCE CRETATED: http://${_resource_host}/${VERSION}/${FILENAME}"
   cd ..
 }
