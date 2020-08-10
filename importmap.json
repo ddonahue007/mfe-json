@@ -4,14 +4,14 @@
     "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js",
     "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.5.3/lib/system/single-spa.min.js",
     "@react-mf/root-config": "http://root-config-cmolloy.apps.ocp4.patternfly.org/react-mf-root-config.js",
-    "@react-mf/navigation": "http://nginx-cmolloy.apps.ocp4.patternfly.org/dist/react-mf-navigation.js",
-    "@react-mf/react-app-1": "http://nginx-cmolloy.apps.ocp4.patternfly.org/dist/react-mf-react-app-1.js",
-    "@react-mf/react-app-2": "http://nginx-cmolloy.apps.ocp4.patternfly.org/dist/react-mf-react-app-2.js",
+    "@react-mf/navigation": "http://nginx-cmolloy.apps.ocp4.patternfly.org/2bcdb6398f9bde74f7465d723c3fbee946473ff3/react-mf-navigation.js",
+    "@react-mf/react-app-1": "http://nginx-cmolloy.apps.ocp4.patternfly.org/f4f320583e0a909e8f61e4bb87b4dfa4c5f75379/react-mf-react-app-1.js",
+    "@react-mf/react-app-2": "http://nginx-cmolloy.apps.ocp4.patternfly.org/57042bc8e5d2977cea9919369b5f0d155de55aec/react-mf-react-app-2.js",
     "rxjs": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs@6.5.5/system/rxjs.min.js",
     "rxjs/operators": "https://cdn.jsdelivr.net/npm/@esm-bundle/rxjs@6.5.5/system/rxjs-operators.min.js",
-    "@react-mf/react-app-2/": "http://nginx-cmolloy.apps.ocp4.patternfly.org/dist/",
-    "@react-mf/react-app-1/": "http://nginx-cmolloy.apps.ocp4.patternfly.org/dist/",
-    "@react-mf/navigation/": "http://nginx-cmolloy.apps.ocp4.patternfly.org/dist/",
+    "@react-mf/react-app-2/": "http://nginx-cmolloy.apps.ocp4.patternfly.org/dist/57042bc8e5d2977cea9919369b5f0d155de55aec",
+    "@react-mf/react-app-1/": "http://nginx-cmolloy.apps.ocp4.patternfly.org/dist/f4f320583e0a909e8f61e4bb87b4dfa4c5f75379",
+    "@react-mf/navigation/": "http://nginx-cmolloy.apps.ocp4.patternfly.org/dist/2bcdb6398f9bde74f7465d723c3fbee946473ff3",
     "@react-mf/root-config/": "http://root-config-cmolloy.apps.ocp4.patternfly.org/"
   }
 }
